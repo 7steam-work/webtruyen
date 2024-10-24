@@ -1,0 +1,44 @@
+services:
+  db:
+    container_name: database
+    image: mysql:8.0.38
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: ngonlustory
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app_network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  phpmyadmin:
+    container_name: phpmyadmindb
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    ports:
+      - "8000:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: admin123
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  mysql_data:

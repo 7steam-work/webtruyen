@@ -1,0 +1,13 @@
+package site.ngonlustory;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class NgonlustoryApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
