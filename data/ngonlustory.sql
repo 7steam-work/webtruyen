@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: db:3306
--- Thời gian đã tạo: Th10 24, 2024 lúc 03:00 AM
+-- Thời gian đã tạo: Th12 25, 2024 lúc 03:35 PM
 -- Phiên bản máy phục vụ: 8.0.38
 -- Phiên bản PHP: 8.2.8
 
@@ -28,26 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `chapters` (
-  `id` bigint UNSIGNED NOT NULL,
-  `story_id` int DEFAULT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `story_id` int UNSIGNED DEFAULT NULL,
   `chapter_number` int NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `content` text,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `chapters`
---
-
-INSERT INTO `chapters` (`id`, `story_id`, `chapter_number`, `title`, `content`, `created_at`) VALUES
-(1, 1, 1, 'Khởi Đầu Của Cuộc Hành Trình', 'Đây là chương đầu tiên của Chuyến Phiêu Lưu Kỳ Diệu.', '2024-10-24 02:57:22'),
-(2, 1, 2, 'Phép Thuật Đầu Tiên', 'Phù thủy trẻ học được phép thuật đầu tiên của mình.', '2024-10-24 02:57:22'),
-(3, 2, 1, 'Nhiệm Vụ Đến Sao Hỏa', 'Đội thám hiểm chuẩn bị cho cuộc hành trình đến Sao Hỏa.', '2024-10-24 02:57:22'),
-(4, 4, 1, 'Sự Thức Tỉnh Của Anh Hùng', NULL, '2024-10-24 02:57:22'),
-(5, 4, 2, 'Bắt Đầu Luyện Tập', NULL, '2024-10-24 02:57:22'),
-(6, 5, 1, 'Thị Trấn Bị Ám', NULL, '2024-10-24 02:57:22'),
-(7, 5, 2, 'Con Ma Đầu Tiên', NULL, '2024-10-24 02:57:22');
 
 -- --------------------------------------------------------
 
@@ -56,23 +43,11 @@ INSERT INTO `chapters` (`id`, `story_id`, `chapter_number`, `title`, `content`, 
 --
 
 CREATE TABLE `chapter_images` (
-  `id` bigint UNSIGNED NOT NULL,
-  `chapter_id` int DEFAULT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `chapter_id` int UNSIGNED DEFAULT NULL,
   `image_url` varchar(255) NOT NULL,
   `page_number` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `chapter_images`
---
-
-INSERT INTO `chapter_images` (`id`, `chapter_id`, `image_url`, `page_number`) VALUES
-(1, 4, 'img/anh_hung_thuc_tinh_trang1.jpg', 1),
-(2, 4, 'img/anh_hung_thuc_tinh_trang2.jpg', 2),
-(3, 5, 'img/luyen_tap_bat_dau_trang1.jpg', 1),
-(4, 6, 'img/thi_tran_bi_am_trang1.jpg', 1),
-(5, 6, 'img/thi_tran_bi_am_trang2.jpg', 2),
-(6, 7, 'img/con_ma_dau_tien_trang1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -81,24 +56,12 @@ INSERT INTO `chapter_images` (`id`, `chapter_id`, `image_url`, `page_number`) VA
 --
 
 CREATE TABLE `comments` (
-  `id` bigint UNSIGNED NOT NULL,
-  `user_id` int DEFAULT NULL,
-  `chapter_id` int DEFAULT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED DEFAULT NULL,
+  `chapter_id` int UNSIGNED DEFAULT NULL,
   `content` text NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `comments`
---
-
-INSERT INTO `comments` (`id`, `user_id`, `chapter_id`, `content`, `created_at`) VALUES
-(1, 1, 1, 'Đây là một chương tuyệt vời!', '2024-10-24 02:58:32'),
-(2, 1, 2, 'Mình rất thích cách miêu tả phép thuật ở đây.', '2024-10-24 02:58:32'),
-(3, 2, 1, 'Chương này thật hấp dẫn!', '2024-10-24 02:58:32'),
-(4, 3, 3, 'Rất phấn khích cho chuyến đi lên Sao Hỏa!', '2024-10-24 02:58:32'),
-(5, 4, 5, 'Chương này làm mình thấy lạnh sống lưng.', '2024-10-24 02:58:32'),
-(6, 5, 6, 'Con ma đầu tiên xuất hiện thật đáng sợ.', '2024-10-24 02:58:32');
 
 -- --------------------------------------------------------
 
@@ -107,20 +70,10 @@ INSERT INTO `comments` (`id`, `user_id`, `chapter_id`, `content`, `created_at`) 
 --
 
 CREATE TABLE `favorites` (
-  `user_id` int NOT NULL,
-  `story_id` int NOT NULL
+  `id` int NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `story_id` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `favorites`
---
-
-INSERT INTO `favorites` (`user_id`, `story_id`) VALUES
-(1, 1),
-(1, 2),
-(2, 1),
-(3, 3),
-(4, 4);
 
 -- --------------------------------------------------------
 
@@ -129,45 +82,102 @@ INSERT INTO `favorites` (`user_id`, `story_id`) VALUES
 --
 
 CREATE TABLE `genres` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `genres`
---
-
-INSERT INTO `genres` (`id`, `name`) VALUES
-(5, 'Hài hước'),
-(4, 'Khoa học viễn tưởng'),
-(6, 'Kinh dị'),
-(1, 'Kỳ ảo'),
-(3, 'Lãng mạn'),
-(2, 'Phiêu lưu'),
-(7, 'Tâm lý');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `ratings`
+-- Cấu trúc bảng cho bảng `hashtags`
 --
 
-CREATE TABLE `ratings` (
-  `user_id` int NOT NULL,
-  `story_id` int NOT NULL,
-  `rating` int DEFAULT NULL
-) ;
+CREATE TABLE `hashtags` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
 
 --
--- Đang đổ dữ liệu cho bảng `ratings`
+-- Cấu trúc bảng cho bảng `hashtag_stories`
 --
 
-INSERT INTO `ratings` (`user_id`, `story_id`, `rating`) VALUES
-(1, 1, 5),
-(1, 2, 4),
-(2, 1, 4),
-(3, 3, 5),
-(4, 4, 5);
+CREATE TABLE `hashtag_stories` (
+  `id` int NOT NULL,
+  `hashtag_id` int UNSIGNED NOT NULL,
+  `story_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `notifications`
+--
+
+CREATE TABLE `notifications` (
+  `id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `type` enum('chapter_update','comment_reply','system') NOT NULL,
+  `content` text NOT NULL,
+  `is_read` tinyint(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `ratings_chap`
+--
+
+CREATE TABLE `ratings_chap` (
+  `id` int NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `chap_id` int UNSIGNED NOT NULL,
+  `rating` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `ratings_story`
+--
+
+CREATE TABLE `ratings_story` (
+  `id` int NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `story_id` int UNSIGNED NOT NULL,
+  `rating` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `reading_history`
+--
+
+CREATE TABLE `reading_history` (
+  `id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `chapter_id` int UNSIGNED NOT NULL,
+  `read_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `reports`
+--
+
+CREATE TABLE `reports` (
+  `id` int UNSIGNED NOT NULL,
+  `user_id` int UNSIGNED NOT NULL,
+  `content_type` enum('story','chapter','comment') NOT NULL,
+  `content_id` int NOT NULL,
+  `reason` text NOT NULL,
+  `status` enum('pending','resolved','rejected') DEFAULT 'pending',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -176,26 +186,20 @@ INSERT INTO `ratings` (`user_id`, `story_id`, `rating`) VALUES
 --
 
 CREATE TABLE `stories` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `author` varchar(255) DEFAULT NULL,
   `description` text,
   `cover_image` varchar(255) DEFAULT NULL,
   `type` enum('novel','manga') NOT NULL,
   `status` enum('ongoing','completed','hiatus') NOT NULL DEFAULT 'ongoing',
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `view_count` int DEFAULT '0',
+  `total_chapters` int DEFAULT '0',
+  `last_updated` timestamp NULL DEFAULT NULL,
+  `rating_avg` float DEFAULT '0',
+  `total_ratings` int DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `stories`
---
-
-INSERT INTO `stories` (`id`, `title`, `author`, `description`, `cover_image`, `type`, `status`, `created_at`) VALUES
-(1, 'Chuyến Phiêu Lưu Kỳ Diệu', 'Alice Johnson', 'Một cuộc phiêu lưu kỳ ảo của một phù thủy trẻ tuổi.', 'bia_chuyen_phieu_luu_ky_dieu.jpg', 'novel', 'ongoing', '2024-10-24 02:55:03'),
-(2, 'Những Kẻ Cướp Ngân Hà', 'John Doe', 'Một câu chuyện khoa học viễn tưởng về những nhà thám hiểm không gian.', 'bia_nhung_ke_cuop_ngan_ha.jpg', 'novel', 'completed', '2024-10-24 02:55:03'),
-(3, 'Tình Yêu Xuyên Thời Gian', 'Jane Smith', 'Một mối tình vượt qua cả thời gian.', 'bia_tinh_yeu_xuyen_thoi_gian.jpg', 'novel', 'hiatus', '2024-10-24 02:55:03'),
-(4, 'Sự Thức Tỉnh Của Anh Hùng', 'Mika Tanaka', 'Một manga về một anh hùng trẻ tuổi đang luyện tập để cứu thế giới.', 'bia_su_thuc_tinh_cua_anh_hung.jpg', 'manga', 'ongoing', '2024-10-24 02:55:03'),
-(5, 'Thị Trấn Ma', 'Samuel Lee', 'Một manga kinh dị về một thị trấn bị những linh hồn bí ẩn ám.', 'bia_thi_tran_ma.jpg', 'manga', 'completed', '2024-10-24 02:55:03');
 
 -- --------------------------------------------------------
 
@@ -204,22 +208,10 @@ INSERT INTO `stories` (`id`, `title`, `author`, `description`, `cover_image`, `t
 --
 
 CREATE TABLE `story_genres` (
-  `story_id` int NOT NULL,
-  `genre_id` int NOT NULL
+  `id` int NOT NULL,
+  `story_id` int UNSIGNED NOT NULL,
+  `genre_id` int UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `story_genres`
---
-
-INSERT INTO `story_genres` (`story_id`, `genre_id`) VALUES
-(1, 1),
-(1, 2),
-(2, 4),
-(3, 3),
-(4, 1),
-(4, 2),
-(5, 6);
 
 -- --------------------------------------------------------
 
@@ -228,24 +220,16 @@ INSERT INTO `story_genres` (`story_id`, `genre_id`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `role` enum('user','admin') DEFAULT 'user',
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `avatar` varchar(255) DEFAULT NULL,
+  `last_login` timestamp NULL DEFAULT NULL,
+  `bio` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `role`, `created_at`) VALUES
-(1, 'user1', 'user1', 'user1@gmail.com', 'user', '2024-10-24 02:44:09'),
-(2, 'user2', 'user2', 'user2@gmail.com', 'user', '2024-10-24 02:44:09'),
-(3, 'user3', 'user3', 'user3@gmail.com', 'user', '2024-10-24 02:44:09'),
-(4, 'user4', 'user4', 'user4@gmail.com', 'user', '2024-10-24 02:44:09'),
-(5, 'user5', 'user5', 'user5@gmail.com', 'user', '2024-10-24 02:44:09');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -256,27 +240,33 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `role`, `created_at`
 --
 ALTER TABLE `chapters`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `fk_chapters_story` (`story_id`);
 
 --
 -- Chỉ mục cho bảng `chapter_images`
 --
 ALTER TABLE `chapter_images`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `fk_chapter_images_chapter` (`chapter_id`);
 
 --
 -- Chỉ mục cho bảng `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `fk_comments_user` (`user_id`),
+  ADD KEY `fk_comments_chapter` (`chapter_id`);
 
 --
 -- Chỉ mục cho bảng `favorites`
 --
 ALTER TABLE `favorites`
-  ADD PRIMARY KEY (`user_id`,`story_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_favorites_user` (`user_id`),
+  ADD KEY `fk_favorites_story` (`story_id`);
 
 --
 -- Chỉ mục cho bảng `genres`
@@ -287,10 +277,57 @@ ALTER TABLE `genres`
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Chỉ mục cho bảng `ratings`
+-- Chỉ mục cho bảng `hashtags`
 --
-ALTER TABLE `ratings`
-  ADD PRIMARY KEY (`user_id`,`story_id`);
+ALTER TABLE `hashtags`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Chỉ mục cho bảng `hashtag_stories`
+--
+ALTER TABLE `hashtag_stories`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_hashtag_stories_hashtag` (`hashtag_id`),
+  ADD KEY `fk_hashtag_stories_story` (`story_id`);
+
+--
+-- Chỉ mục cho bảng `notifications`
+--
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_notifications_user` (`user_id`);
+
+--
+-- Chỉ mục cho bảng `ratings_chap`
+--
+ALTER TABLE `ratings_chap`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_ratings_chap_user` (`user_id`),
+  ADD KEY `fk_ratings_chap_chapter` (`chap_id`);
+
+--
+-- Chỉ mục cho bảng `ratings_story`
+--
+ALTER TABLE `ratings_story`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_ratings_story_user` (`user_id`),
+  ADD KEY `fk_ratings_story_story` (`story_id`);
+
+--
+-- Chỉ mục cho bảng `reading_history`
+--
+ALTER TABLE `reading_history`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_reading_history_user` (`user_id`),
+  ADD KEY `fk_reading_history_chapter` (`chapter_id`);
+
+--
+-- Chỉ mục cho bảng `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_reports_user` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `stories`
@@ -303,7 +340,9 @@ ALTER TABLE `stories`
 -- Chỉ mục cho bảng `story_genres`
 --
 ALTER TABLE `story_genres`
-  ADD PRIMARY KEY (`story_id`,`genre_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_story_genres_story` (`story_id`),
+  ADD KEY `fk_story_genres_genre` (`genre_id`);
 
 --
 -- Chỉ mục cho bảng `users`
@@ -322,37 +361,168 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `chapters`
 --
 ALTER TABLE `chapters`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `chapter_images`
 --
 ALTER TABLE `chapter_images`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `favorites`
+--
+ALTER TABLE `favorites`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `hashtags`
+--
+ALTER TABLE `hashtags`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `hashtag_stories`
+--
+ALTER TABLE `hashtag_stories`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `notifications`
+--
+ALTER TABLE `notifications`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `ratings_chap`
+--
+ALTER TABLE `ratings_chap`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `ratings_story`
+--
+ALTER TABLE `ratings_story`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `reading_history`
+--
+ALTER TABLE `reading_history`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `stories`
 --
 ALTER TABLE `stories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `story_genres`
+--
+ALTER TABLE `story_genres`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `chapters`
+--
+ALTER TABLE `chapters`
+  ADD CONSTRAINT `fk_chapters_story` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `chapter_images`
+--
+ALTER TABLE `chapter_images`
+  ADD CONSTRAINT `fk_chapter_images_chapter` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `fk_comments_chapter` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_comments_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `favorites`
+--
+ALTER TABLE `favorites`
+  ADD CONSTRAINT `fk_favorites_story` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_favorites_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `hashtag_stories`
+--
+ALTER TABLE `hashtag_stories`
+  ADD CONSTRAINT `fk_hashtag_stories_hashtag` FOREIGN KEY (`hashtag_id`) REFERENCES `hashtags` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_hashtag_stories_story` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `notifications`
+--
+ALTER TABLE `notifications`
+  ADD CONSTRAINT `fk_notifications_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `ratings_chap`
+--
+ALTER TABLE `ratings_chap`
+  ADD CONSTRAINT `fk_ratings_chap_chapter` FOREIGN KEY (`chap_id`) REFERENCES `chapters` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_ratings_chap_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `ratings_story`
+--
+ALTER TABLE `ratings_story`
+  ADD CONSTRAINT `fk_ratings_story_story` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_ratings_story_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `reading_history`
+--
+ALTER TABLE `reading_history`
+  ADD CONSTRAINT `fk_reading_history_chapter` FOREIGN KEY (`chapter_id`) REFERENCES `chapters` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_reading_history_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `reports`
+--
+ALTER TABLE `reports`
+  ADD CONSTRAINT `fk_reports_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `story_genres`
+--
+ALTER TABLE `story_genres`
+  ADD CONSTRAINT `fk_story_genres_genre` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_story_genres_story` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
