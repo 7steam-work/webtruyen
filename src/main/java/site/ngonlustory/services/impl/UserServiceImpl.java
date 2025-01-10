@@ -1,0 +1,52 @@
+package site.ngonlustory.services.impl;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import site.ngonlustory.dto.CreateUserDto;
+import site.ngonlustory.models.RoleEntity;
+import site.ngonlustory.models.UserEntity;
+import site.ngonlustory.repository.UserRepository;
+import site.ngonlustory.response.ResponseMsg;
+import site.ngonlustory.services.UserService;
+
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class UserServiceImpl implements UserService {
+    private final UserRepository userRepository;
+
+    public List<UserEntity> getAllUser() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public ResponseMsg createUser(CreateUserDto input) {
+        UserEntity userEntity = UserEntity.builder()
+                .username(input.getUsername())
+                .password(input.getPassword())
+                .email(input.getEmail())
+                .roleId(1)
+                .createdAt(Timestamp.valueOf(LocalDateTime.now()))
+                .avatar(input.getAvatar())
+                .lastLogin(null)
+                .bio(input.getBio())
+                .updatedAt(Timestamp.valueOf(LocalDateTime.now()))
+                .updatedBy(null)
+                .build();
+        return ResponseMsg.success(userRepository.save(userEntity));
+    }
+
+    @Override
+    public ResponseMsg deleteUser(int id) {
+        userRepository.deleteById(id);
+        return ResponseMsg.success("Drop user " + id + " success");
+    }
+
+}
