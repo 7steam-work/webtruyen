@@ -1,5 +1,4 @@
 package site.ngonlustory.response;
-import lombok.Getter;
 
 public record ResponseMsg(Integer code, String message, Object data) {
     public static ResponseMsg success(Object data) {
@@ -7,6 +6,9 @@ public record ResponseMsg(Integer code, String message, Object data) {
     }
     public static ResponseMsg success(String message, Object data) {
         return new ResponseMsg(200, message, data);
+    }
+    public static ResponseMsg success(Integer code, String message, Object data) {
+        return new ResponseMsg(code, message, data);
     }
 
     public static ResponseMsg error(Integer code, String message) {
