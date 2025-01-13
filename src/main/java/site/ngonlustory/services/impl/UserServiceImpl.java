@@ -3,6 +3,7 @@ package site.ngonlustory.services.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import site.ngonlustory.dto.CreateUserDto;
@@ -22,8 +23,13 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
-    public List<UserEntity> getAllUser() {
-        return userRepository.findAll();
+    @Override
+    public ResponseMsg getUser(Integer id,Pageable pageable) {
+        if (id == null) {
+            return ResponseMsg.success(userRepository.findAll(pageable));
+        } else {
+            return ResponseMsg.success(userRepository.findById(id).orElse(null));
+        }
     }
 
     @Override
