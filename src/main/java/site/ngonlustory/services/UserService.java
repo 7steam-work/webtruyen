@@ -4,10 +4,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import site.ngonlustory.dto.CreateUserDto;
 import site.ngonlustory.dto.UpdateUserDto;
-import site.ngonlustory.models.UserEntity;
 import site.ngonlustory.response.ResponseMsg;
-
-import java.util.List;
 
 @Service
 public interface UserService {
