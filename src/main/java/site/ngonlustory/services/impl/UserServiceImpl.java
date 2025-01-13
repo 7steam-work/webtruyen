@@ -2,13 +2,10 @@ package site.ngonlustory.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import site.ngonlustory.dto.CreateUserDto;
 import site.ngonlustory.dto.UpdateUserDto;
-import site.ngonlustory.models.RoleEntity;
 import site.ngonlustory.models.UserEntity;
 import site.ngonlustory.repository.UserRepository;
 import site.ngonlustory.response.ResponseMsg;
@@ -16,7 +13,6 @@ import site.ngonlustory.services.UserService;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 
 @Service
