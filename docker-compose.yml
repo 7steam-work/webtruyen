@@ -10,7 +10,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data/init_ver4.sql:/docker-entrypoint-initdb.d/init_ver4.sql
     networks:
       - app_network
     healthcheck:
