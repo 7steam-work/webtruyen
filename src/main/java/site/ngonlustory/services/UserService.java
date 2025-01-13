@@ -9,7 +9,7 @@ import site.ngonlustory.response.ResponseMsg;
 @Service
 public interface UserService {
     ResponseMsg getUser(Integer id, Pageable pageable);
-    ResponseMsg createUser(CreateUserDto createUserDto);
+    ResponseMsg createUser(CreateUserDto createUserDto, Integer id);
     ResponseMsg updateUser(Integer id, UpdateUserDto updateUserDto);
     ResponseMsg deleteUser(int id);
 

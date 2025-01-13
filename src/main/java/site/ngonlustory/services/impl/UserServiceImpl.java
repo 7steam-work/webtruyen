@@ -31,12 +31,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseMsg createUser(CreateUserDto input) {
+    public ResponseMsg createUser(CreateUserDto input, Integer roleValue) {
         UserEntity userEntity = UserEntity.builder()
                 .username(input.getUsername())
                 .password(input.getPassword())
                 .email(input.getEmail())
-                .roleId(1)
+                .roleId(roleValue)
                 .createdAt(Timestamp.valueOf(LocalDateTime.now()))
                 .avatar(input.getAvatar())
                 .lastLogin(null)
