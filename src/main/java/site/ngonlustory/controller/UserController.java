@@ -37,7 +37,12 @@ public class UserController {
 
     @PostMapping("/createUser")
     public ResponseMsg createUser(@RequestBody CreateUserDto createUserDto) {
-        return userService.createUser(createUserDto);
+        return userService.createUser(createUserDto, 1);
+    }
+
+    @PostMapping("/createAdmin")
+    public ResponseMsg createAdmin(@RequestBody CreateUserDto createAdminDto) {
+        return userService.createUser(createAdminDto, 2);
     }
 
     @DeleteMapping("/deleteUser")
