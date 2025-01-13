@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: db:3306
--- Thời gian đã tạo: Th1 13, 2025 lúc 09:13 AM
+-- Thời gian đã tạo: Th1 10, 2025 lúc 12:20 PM
 -- Phiên bản máy phục vụ: 8.0.38
 -- Phiên bản PHP: 8.2.8
 
@@ -190,14 +190,6 @@ CREATE TABLE `role` (
   `role_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `role`
---
-
-INSERT INTO `role` (`id`, `role_name`) VALUES
-(1, 'user'),
-(2, 'admin');
-
 -- --------------------------------------------------------
 
 --
@@ -251,33 +243,6 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_by` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Đang đổ dữ liệu cho bảng `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `email`, `role_id`, `created_at`, `avatar`, `last_login`, `bio`, `updated_at`, `updated_by`) VALUES
-(1, 'admin', 'Conga@123', 'admin@gmail.com', 2, '2025-01-13 08:14:34', 'john_avatar.png', NULL, 'Bio of John Doe', '2025-01-13 08:14:34', NULL),
-(2, 'user1', 'Conga@123', 'user1@example.com', 1, '2025-01-13 08:14:52', 'user1_avatar.png', NULL, 'Bio of User 1', '2025-01-13 08:17:21', NULL),
-(3, 'user2', 'Conga@123', 'user2@example.com', 1, '2025-01-13 08:14:52', 'user2_avatar.png', NULL, 'Bio of User 2', '2025-01-13 08:17:21', NULL),
-(4, 'user3', 'Conga@123', 'user3@example.com', 1, '2025-01-13 08:14:52', 'user3_avatar.png', NULL, 'Bio of User 3', '2025-01-13 08:17:21', NULL),
-(5, 'user4', 'Conga@123', 'user4@example.com', 1, '2025-01-13 08:14:52', 'user4_avatar.png', NULL, 'Bio of User 4', '2025-01-13 08:17:21', NULL),
-(6, 'user5', 'Conga@123', 'user5@example.com', 1, '2025-01-13 08:14:52', 'user5_avatar.png', NULL, 'Bio of User 5', '2025-01-13 08:17:21', NULL),
-(7, 'user6', 'Conga@123', 'user6@example.com', 1, '2025-01-13 08:14:52', 'user6_avatar.png', NULL, 'Bio of User 6', '2025-01-13 08:17:21', NULL),
-(8, 'user7', 'Conga@123', 'user7@example.com', 1, '2025-01-13 08:14:52', 'user7_avatar.png', NULL, 'Bio of User 7', '2025-01-13 08:17:21', NULL),
-(9, 'user8', 'Conga@123', 'user8@example.com', 1, '2025-01-13 08:14:52', 'user8_avatar.png', NULL, 'Bio of User 8', '2025-01-13 08:17:21', NULL),
-(10, 'user9', 'Conga@123', 'user9@example.com', 1, '2025-01-13 08:14:52', 'user9_avatar.png', NULL, 'Bio of User 9', '2025-01-13 08:17:21', NULL),
-(11, 'user10', 'Conga@123', 'user10@example.com', 1, '2025-01-13 08:14:52', 'user10_avatar.png', NULL, 'Bio of User 10', '2025-01-13 08:17:21', NULL),
-(12, 'user11', 'Conga@123', 'user11@example.com', 1, '2025-01-13 08:15:06', 'user11_avatar.png', NULL, 'Bio of User 11', '2025-01-13 08:17:21', NULL),
-(13, 'user12', 'Conga@123', 'user12@example.com', 1, '2025-01-13 08:15:06', 'user12_avatar.png', NULL, 'Bio of User 12', '2025-01-13 08:17:21', NULL),
-(14, 'user13', 'Conga@123', 'user13@example.com', 1, '2025-01-13 08:15:06', 'user13_avatar.png', NULL, 'Bio of User 13', '2025-01-13 08:17:21', NULL),
-(15, 'user14', 'Conga@123', 'user14@example.com', 1, '2025-01-13 08:15:06', 'user14_avatar.png', NULL, 'Bio of User 14', '2025-01-13 08:17:21', NULL),
-(16, 'user15', 'Conga@123', 'user15@example.com', 1, '2025-01-13 08:15:06', 'user15_avatar.png', NULL, 'Bio of User 15', '2025-01-13 08:17:21', NULL),
-(17, 'user16', 'Conga@123', 'user16@example.com', 1, '2025-01-13 08:15:06', 'user16_avatar.png', NULL, 'Bio of User 16', '2025-01-13 08:17:21', NULL),
-(18, 'user17', 'Conga@123', 'user17@example.com', 1, '2025-01-13 08:15:06', 'user17_avatar.png', NULL, 'Bio of User 17', '2025-01-13 08:17:21', NULL),
-(19, 'user18', 'Conga@123', 'user18@example.com', 1, '2025-01-13 08:15:06', 'user18_avatar.png', NULL, 'Bio of User 18', '2025-01-13 08:17:21', NULL),
-(20, 'user19', 'Conga@123', 'user19@example.com', 1, '2025-01-13 08:15:06', 'user19_avatar.png', NULL, 'Bio of User 19', '2025-01-13 08:17:21', NULL),
-(21, 'user20', 'Conga@123', 'user20@example.com', 1, '2025-01-13 08:15:06', 'user20_avatar.png', NULL, 'Bio of User 20', '2025-01-13 08:17:21', NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -488,7 +453,7 @@ ALTER TABLE `reports`
 -- AUTO_INCREMENT cho bảng `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `stories`
@@ -506,7 +471,7 @@ ALTER TABLE `story_genres`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
