@@ -18,4 +18,16 @@ public record ResponseMsg(Integer code, String message, Object data) {
     public int getCode() {
         return code;
     }
+
+    public static ResponseMsg badRequest(String message) {
+        return new ResponseMsg(400, message, null);
+    }
+
+    public static ResponseMsg notFound(String message) {
+        return new ResponseMsg(404, message, null);
+    }
+
+    public static ResponseMsg serverError(String message) {
+        return new ResponseMsg(500, message, null);
+    }
 }
