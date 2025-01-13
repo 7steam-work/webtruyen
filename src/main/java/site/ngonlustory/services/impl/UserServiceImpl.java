@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import site.ngonlustory.dto.CreateUserDto;
+import site.ngonlustory.dto.UpdateUserDto;
 import site.ngonlustory.models.RoleEntity;
 import site.ngonlustory.models.UserEntity;
 import site.ngonlustory.repository.UserRepository;
@@ -16,6 +17,7 @@ import site.ngonlustory.services.UserService;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -47,6 +49,39 @@ public class UserServiceImpl implements UserService {
                 .updatedBy(null)
                 .build();
         return ResponseMsg.success(userRepository.save(userEntity));
+    }
+
+    @Override
+    public ResponseMsg updateUser(Integer id, UpdateUserDto input) {
+        Optional<UserEntity> userOptional = userRepository.findById(id);
+
+        if (userOptional.isEmpty()) {
+            return ResponseMsg.error(404, "User not found");
+        }
+
+        UserEntity existingUser = userOptional.get();
+
+        // Chỉ update các trường không null
+        if (input.getUsername() != null) {
+            existingUser.setUsername(input.getUsername());
+        }
+        if (input.getPassword() != null) {
+            existingUser.setPassword(input.getPassword());
+        }
+        if (input.getEmail() != null) {
+            existingUser.setEmail(input.getEmail());
+        }
+        if (input.getAvatar() != null) {
+            existingUser.setAvatar(input.getAvatar());
+        }
+        if (input.getBio() != null) {
+            existingUser.setBio(input.getBio());
+        }
+
+        existingUser.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
+
+        UserEntity updatedUser = userRepository.save(existingUser);
+        return ResponseMsg.success(updatedUser);
     }
 
     @Override

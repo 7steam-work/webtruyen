@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import site.ngonlustory.dto.CreateUserDto;
+import site.ngonlustory.dto.UpdateUserDto;
 import site.ngonlustory.response.ResponseMsg;
 import site.ngonlustory.services.UserService;
 
@@ -27,6 +28,11 @@ public class UserController {
         Sort.Direction dir = Sort.Direction.fromString(direction.toUpperCase());
         Pageable pageable = PageRequest.of(page, size, Sort.by(dir, sortBy));
         return userService.getUser(id, pageable);
+    }
+
+    @PutMapping("/updateUser/{id}")
+    public ResponseMsg updateUser(@PathVariable Integer id, @RequestBody UpdateUserDto updateUserDto) {
+        return userService.updateUser(id, updateUserDto);
     }
 
     @PostMapping("/createUser")
