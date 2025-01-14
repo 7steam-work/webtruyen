@@ -17,8 +17,8 @@ import site.ngonlustory.services.UserService;
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/getAllUser")
-    public ResponseMsg getAllUser(
+    @GetMapping("/getUser")
+    public ResponseMsg getUser(
             @RequestParam(required = false) Integer id,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
