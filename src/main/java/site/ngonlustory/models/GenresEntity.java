@@ -21,6 +21,6 @@ public class GenresEntity {
     private String name_VN;
 
     @Column(name = "name_en")
-    private String name_en;
+    private String name_EN;
 
 }
