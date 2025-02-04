@@ -16,7 +16,7 @@ import site.ngonlustory.services.UserService;
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 @CrossOrigin
-@Tag(name = "Quản lý người dùng")
+@Tag(name = "UserController - Quản lý người dùng")
 public class UserController {
     private final UserService userService;
 

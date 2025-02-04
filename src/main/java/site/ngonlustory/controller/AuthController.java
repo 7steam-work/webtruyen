@@ -1,5 +1,6 @@
 package site.ngonlustory.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import site.ngonlustory.dto.LoginDto;
@@ -10,6 +11,7 @@ import site.ngonlustory.services.AuthService;
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 @CrossOrigin
+@Tag(name = "AuthController - Quản lý xác thực")
 public class AuthController {
     private final AuthService authService;
 

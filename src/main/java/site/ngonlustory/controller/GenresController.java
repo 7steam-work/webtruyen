@@ -15,7 +15,7 @@ import site.ngonlustory.services.GenresService;
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 @CrossOrigin
-@Tag(name = "Thể loại truyện")
+@Tag(name = "GenresController - Thể loại truyện")
 public class GenresController {
     private final GenresService genresService;
 

@@ -534,3 +534,267 @@
 04-02-2025 09:01:44.009 [Thread-31] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
 04-02-2025 09:01:44.010 [Thread-31] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-8 - Shutdown initiated...
 04-02-2025 09:01:44.020 [Thread-31] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-8 - Shutdown completed.
+04-02-2025 09:01:44.073 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 9744 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:01:44.074 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:01:44.179 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:01:44.195 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 15 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:01:44.246 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:01:44.246 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:01:44.247 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:01:44.247 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:01:44.260 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:01:44.260 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 185 ms
+04-02-2025 09:01:44.268 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-9 - Starting...
+04-02-2025 09:01:44.283 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f6d9f5a
+04-02-2025 09:01:44.283 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-9 - Start completed.
+04-02-2025 09:01:44.283 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:01:44.302 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:01:44.304 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:01:44.308 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:01:44.309 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:01:44.309 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:01:44.386 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:01:44.386 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:01:44.437 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:01:44.558 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:01:44.564 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:01:44.569 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:01:44.572 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 0.513 seconds (process running for 395.619)
+04-02-2025 09:01:44.573 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+04-02-2025 09:01:44.575 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
+04-02-2025 09:03:34.392 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:03:34.393 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-9 - Shutdown initiated...
+04-02-2025 09:03:34.404 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-9 - Shutdown completed.
+04-02-2025 09:03:36.798 [background-preinit] INFO  o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 8.0.1.Final
+04-02-2025 09:03:36.831 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 4792 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:03:36.832 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:03:36.867 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+04-02-2025 09:03:36.868 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+04-02-2025 09:03:37.493 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:03:37.570 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 72 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:03:38.037 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:03:38.048 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:03:38.051 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:03:38.051 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:03:38.105 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:03:38.105 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1237 ms
+04-02-2025 09:03:38.129 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+04-02-2025 09:03:38.475 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3dce61e9
+04-02-2025 09:03:38.477 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+04-02-2025 09:03:38.485 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:03:38.597 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:03:38.664 [restartedMain] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.5.3.Final
+04-02-2025 09:03:38.703 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:03:38.985 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:03:39.053 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:03:39.054 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:03:40.007 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:03:40.009 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:03:40.344 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:03:40.735 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:03:40.754 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:03:40.771 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:03:40.779 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 4.39 seconds (process running for 5.014)
+04-02-2025 09:03:40.782 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
+04-02-2025 09:03:43.006 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+04-02-2025 09:03:43.006 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+04-02-2025 09:03:43.007 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+04-02-2025 09:03:43.901 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource.getOpenApi - Init duration for springdoc-openapi is: 260 ms
+04-02-2025 09:04:26.949 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+04-02-2025 09:04:26.951 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:04:27.216 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:04:27.219 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+04-02-2025 09:04:27.237 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+04-02-2025 09:04:27.316 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 4792 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:04:27.316 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:04:27.470 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:04:27.493 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 23 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:04:27.575 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:04:27.577 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:04:27.577 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:04:27.577 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:04:27.592 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:04:27.592 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 275 ms
+04-02-2025 09:04:27.600 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+04-02-2025 09:04:27.619 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a566f53
+04-02-2025 09:04:27.619 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+04-02-2025 09:04:27.620 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:04:27.638 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:04:27.639 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:04:27.646 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:04:27.647 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:04:27.647 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:04:27.822 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:04:27.823 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:04:27.906 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:04:28.097 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:04:28.108 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:04:28.112 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:04:28.116 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 0.821 seconds (process running for 52.352)
+04-02-2025 09:04:28.117 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+04-02-2025 09:04:28.118 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
+04-02-2025 09:04:29.516 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+04-02-2025 09:04:29.518 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:04:29.727 [Thread-7] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:04:29.729 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+04-02-2025 09:04:29.743 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+04-02-2025 09:04:29.869 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 4792 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:04:29.869 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:04:30.189 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:04:30.236 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 45 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:04:30.363 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:04:30.363 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:04:30.365 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:04:30.365 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:04:30.391 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:04:30.392 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 519 ms
+04-02-2025 09:04:30.409 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Starting...
+04-02-2025 09:04:30.438 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8055e38
+04-02-2025 09:04:30.439 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-3 - Start completed.
+04-02-2025 09:04:30.440 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:04:30.485 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:04:30.487 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:04:30.498 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:04:30.501 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:04:30.503 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:04:30.832 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:04:30.834 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:04:30.981 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:04:31.296 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:04:31.308 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:04:31.315 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:04:31.322 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 1.508 seconds (process running for 55.558)
+04-02-2025 09:04:31.324 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+04-02-2025 09:04:31.324 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
+04-02-2025 09:13:00.611 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 3 class path changes (0 additions, 3 deletions, 0 modifications)
+04-02-2025 09:13:00.612 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:13:00.901 [Thread-11] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:13:00.902 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown initiated...
+04-02-2025 09:13:00.916 [Thread-11] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-3 - Shutdown completed.
+04-02-2025 09:13:01.018 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 4792 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:13:01.018 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:13:01.180 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:13:01.208 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 27 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:13:01.284 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:13:01.286 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:13:01.286 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:13:01.286 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:13:01.301 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:13:01.302 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 282 ms
+04-02-2025 09:13:01.311 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-4 - Starting...
+04-02-2025 09:13:01.329 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22a486c0
+04-02-2025 09:13:01.329 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-4 - Start completed.
+04-02-2025 09:13:01.330 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:13:01.348 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:13:01.350 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:13:01.355 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:13:01.356 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:13:01.356 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:13:01.520 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:13:01.522 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:13:01.621 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:13:01.808 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:13:01.816 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:13:01.819 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:13:01.824 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 0.842 seconds (process running for 566.09)
+04-02-2025 09:13:01.825 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+04-02-2025 09:13:01.825 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
+04-02-2025 09:13:03.250 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 17 class path changes (17 additions, 0 deletions, 0 modifications)
+04-02-2025 09:13:03.254 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:13:03.444 [Thread-15] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:13:03.446 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-4 - Shutdown initiated...
+04-02-2025 09:13:03.461 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-4 - Shutdown completed.
+04-02-2025 09:13:03.630 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 4792 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:13:03.630 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:13:03.886 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:13:03.911 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 24 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:13:04.052 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:13:04.054 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:13:04.055 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:13:04.056 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:13:04.097 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:13:04.098 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 466 ms
+04-02-2025 09:13:04.137 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-5 - Starting...
+04-02-2025 09:13:04.166 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@641e5937
+04-02-2025 09:13:04.168 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-5 - Start completed.
+04-02-2025 09:13:04.168 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:13:04.196 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:13:04.200 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:13:04.206 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:13:04.207 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:13:04.208 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:13:04.440 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:13:04.441 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:13:04.559 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:13:04.795 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:13:04.805 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:13:04.811 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:13:04.815 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 1.244 seconds (process running for 569.082)
+04-02-2025 09:13:04.816 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+04-02-2025 09:13:04.816 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
+04-02-2025 09:14:10.703 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+04-02-2025 09:14:10.704 [Thread-19] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:14:10.936 [Thread-19] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:14:10.938 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-5 - Shutdown initiated...
+04-02-2025 09:14:10.953 [Thread-19] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-5 - Shutdown completed.
+04-02-2025 09:14:11.009 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 4792 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:14:11.009 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:14:11.126 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:14:11.145 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 18 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:14:11.219 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:14:11.220 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:14:11.220 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:14:11.220 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:14:11.236 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:14:11.236 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 226 ms
+04-02-2025 09:14:11.246 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-6 - Starting...
+04-02-2025 09:14:11.263 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ccd64ad
+04-02-2025 09:14:11.264 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-6 - Start completed.
+04-02-2025 09:14:11.264 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:14:11.287 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:14:11.289 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:14:11.296 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:14:11.297 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:14:11.297 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:14:11.436 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:14:11.437 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:14:11.507 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:14:11.630 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:14:11.640 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:14:11.644 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:14:11.650 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 0.654 seconds (process running for 635.916)
+04-02-2025 09:14:11.652 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+04-02-2025 09:14:11.652 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
+04-02-2025 09:14:13.069 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener.onApplicationEvent - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+04-02-2025 09:14:13.072 [Thread-23] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:14:13.259 [Thread-23] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:14:13.259 [Thread-23] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-6 - Shutdown initiated...
+04-02-2025 09:14:13.271 [Thread-23] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-6 - Shutdown completed.
+04-02-2025 09:14:13.328 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarting - Starting NgonlustoryApplication using Java 17.0.13 with PID 4792 (E:\RecycleSpace\webtruyen\target\classes started by truong.truongbacat10 in E:\RecycleSpace\webtruyen)
+04-02-2025 09:14:13.329 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+04-02-2025 09:14:13.430 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04-02-2025 09:14:13.446 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 16 ms. Found 14 JPA repository interfaces.
+04-02-2025 09:14:13.509 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8080 (http)
+04-02-2025 09:14:13.509 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:14:13.510 [restartedMain] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+04-02-2025 09:14:13.510 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.30]
+04-02-2025 09:14:13.526 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+04-02-2025 09:14:13.526 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 196 ms
+04-02-2025 09:14:13.536 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-7 - Starting...
+04-02-2025 09:14:13.556 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f6220b3
+04-02-2025 09:14:13.556 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-7 - Start completed.
+04-02-2025 09:14:13.557 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/ngonlustory'
+04-02-2025 09:14:13.576 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+04-02-2025 09:14:13.577 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+04-02-2025 09:14:13.583 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+04-02-2025 09:14:13.583 [restartedMain] WARN  org.hibernate.orm.deprecation.constructDialect - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04-02-2025 09:14:13.584 [restartedMain] WARN  org.hibernate.orm.deprecation.logSelectedDialect - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+04-02-2025 09:14:13.674 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04-02-2025 09:14:13.674 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04-02-2025 09:14:13.739 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04-02-2025 09:14:13.857 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer - LiveReload server is running on port 35729
+04-02-2025 09:14:13.864 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+04-02-2025 09:14:13.866 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8080 (http) with context path '/'
+04-02-2025 09:14:13.871 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.logStarted - Started NgonlustoryApplication in 0.559 seconds (process running for 638.137)
+04-02-2025 09:14:13.871 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent - Condition evaluation unchanged
+04-02-2025 09:14:13.872 [restartedMain] INFO  s.ngonlustory.NgonlustoryApplication.main - Swagger: http://localhost:8080/swagger-ui/index.html#/
