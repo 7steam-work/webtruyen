@@ -1,5 +1,7 @@
 package site.ngonlustory.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -14,9 +16,13 @@ import site.ngonlustory.services.UserService;
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
 @CrossOrigin
+@Tag(name = "Quản lý người dùng")
 public class UserController {
     private final UserService userService;
 
+    @Operation(
+            description = "Url truy cập: /api/v1/auth/getUser?id=1&page=0&size=10&sortBy=name&direction=desc"
+    )
     @GetMapping("/getUser")
     public ResponseMsg getUser(
             @RequestParam(required = false) Integer id,

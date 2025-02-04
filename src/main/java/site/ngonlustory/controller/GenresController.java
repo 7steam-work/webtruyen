@@ -1,5 +1,7 @@
 package site.ngonlustory.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -13,9 +15,14 @@ import site.ngonlustory.services.GenresService;
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 @CrossOrigin
+@Tag(name = "Thể loại truyện")
 public class GenresController {
     private final GenresService genresService;
 
+    @Operation(
+        summary = "Lấy danh sách thể loại",
+        description = "Url truy cập: /api/v1/auth/getGenres?id=1&page=0&size=10&sortBy=name&direction=desc"
+    )
     @GetMapping("/getGenres")
     public ResponseMsg getGenres(
             @RequestParam(required = false) Integer id,
