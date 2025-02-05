@@ -19,7 +19,7 @@ public class StoryGenresEntity {
 
     @ManyToOne
     @JoinColumn(name = "story_id", nullable = false)
-    private StoryEntity name_VN;
+    private StoryEntity storyEntity;
 
     @ManyToOne
     @JoinColumn(name = "genre_id", nullable = false)

@@ -31,13 +31,15 @@ public class StoryEntity {
     private String description;
 
     @Column(name = "cover_image")
-    private String cover_image;
+    private String coverImage;
 
+    // Note: 1-manga, 2-tiểu thuyết
     @Column(name = "type")
-    private StoryTypeEnum typeStory;
+    private Integer type;
 
+    // Note: 0-gián đoạn, 1-đang diễn ra, 2-hoàn thành
     @Column(name = "status")
-    private StoryStatusEnum statusStory;
+    private Integer status;
 
     @Column(name = "created_at")
     private Timestamp createdAt;
