@@ -76,8 +76,7 @@ public class UserServiceImpl implements UserService {
 
         existingUser.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
 
-        UserEntity updatedUser = userRepository.save(existingUser);
-        return ResponseMsg.success(updatedUser);
+        return ResponseMsg.success(userRepository.save(existingUser));
     }
 
     @Override

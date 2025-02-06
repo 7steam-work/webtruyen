@@ -10,5 +10,5 @@ public interface GenresService {
     ResponseMsg getGenres(Integer id, Pageable pageable);
     ResponseMsg createGenres(ResourceGenresDto resourceGenresDto, Integer id);
     ResponseMsg updateGenres(Integer id, ResourceGenresDto resourceGenresDto);
-    ResponseMsg deleteGenres(int id);
+    ResponseMsg deleteGenres(Integer id);
 }

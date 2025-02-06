@@ -40,7 +40,7 @@ public class StoryServiceImpl implements StoryService {
     @Override
     public ResponseMsg getStoryByGenresId(Integer idGenres, Pageable pageable) {
         if (idGenres == null) {
-            return ResponseMsg.success(storyRepository.findAll(pageable));
+            return ResponseMsg.error(400, "Mã id không được trống!");
         }
         GenresEntity genresExist = genresRepository.findById(idGenres).orElse(null);
         if (genresExist == null) {

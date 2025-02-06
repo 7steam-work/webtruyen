@@ -18,7 +18,6 @@ import java.util.Optional;
 public class GenresServiceImpl implements GenresService {
     private final GenresRepository genresRepository;
 
-
     @Override
     public ResponseMsg getGenres(Integer id, Pageable pageable) {
         if (id == null) {
@@ -59,7 +58,7 @@ public class GenresServiceImpl implements GenresService {
     }
 
     @Override
-    public ResponseMsg deleteGenres(int id) {
+    public ResponseMsg deleteGenres(Integer id) {
         GenresEntity existingGenres = genresRepository.findById(id).orElse(null);
         if (existingGenres == null) {
             return ResponseMsg.error(404, "Genres not found!");
