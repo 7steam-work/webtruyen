@@ -18,10 +18,10 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public ResponseMsg login(LoginDto loginDto, Boolean isUser) {
         if (loginDto.getUsername() == null || loginDto.getPassword() == null || loginDto.getRePassword() == null) {
-            return ResponseMsg.error(400, "Trường bắt buộc thiếu!");
+            return ResponseMsg.badRequest("Trường bắt buộc thiếu!");
         }
         if (!loginDto.getRePassword().equals(loginDto.getPassword())) {
-            return ResponseMsg.error(400, "Mật khẩu không trùng nhau!");
+            return ResponseMsg.badRequest("Mật khẩu không trùng nhau!");
         }
         UserEntity userEntity;
         if (isUser) {
@@ -33,8 +33,8 @@ public class AuthServiceImpl implements AuthService {
             return ResponseMsg.notFound("Không tìm thấy user này!");
         }
         if (!userEntity.getPassword().equals(loginDto.getPassword())) {
-            return ResponseMsg.error(400, "Mật khẩu không chính xác!");
+            return ResponseMsg.badRequest("Mật khẩu không chính xác!");
         }
-        return ResponseMsg.success(200, "Success!", null);
+        return ResponseMsg.success("Success!", null);
     }
 }

@@ -35,6 +35,20 @@ services:
       - db
     networks:
       - app_network
+  api-service:
+    container_name: api-service
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ngonlustory
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin123
+    networks:
+      - app_network
 
 networks:
   app_network:

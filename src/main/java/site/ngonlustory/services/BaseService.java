@@ -12,7 +12,7 @@ public class BaseService {
     public <T, ID> ResponseMsg deleteEntityById(JpaRepository<T, ID> repository, ID id, String entityName) {
         Optional<T> entity = repository.findById(id);
         if (entity.isEmpty()) {
-            return ResponseMsg.error(404, entityName + " không tồn tại với ID: " + id);
+            return ResponseMsg.notFound(entityName + " không tồn tại với ID: " + id);
         }
         repository.deleteById(id);
         return ResponseMsg.success("Xóa " + entityName + " có ID: " + id + " thành công!");

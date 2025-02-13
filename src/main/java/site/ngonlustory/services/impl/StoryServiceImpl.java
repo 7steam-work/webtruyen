@@ -3,7 +3,6 @@ package site.ngonlustory.services.impl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import site.ngonlustory.dto.ResourceStoryDto;
@@ -18,7 +17,6 @@ import site.ngonlustory.services.StoryService;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -40,11 +38,11 @@ public class StoryServiceImpl implements StoryService {
     @Override
     public ResponseMsg getStoryByGenresId(Integer idGenres, Pageable pageable) {
         if (idGenres == null) {
-            return ResponseMsg.error(400, "Mã id không được trống!");
+            return ResponseMsg.badRequest("Mã id không được trống!");
         }
         GenresEntity genresExist = genresRepository.findById(idGenres).orElse(null);
         if (genresExist == null) {
-            return ResponseMsg.error(404, "Không tìm thấy thể loại truyện này!");
+            return ResponseMsg.notFound("Không tìm thấy thể loại truyện này!");
         }
 
         List<StoryGenresEntity> storyGenresEntityList = storyGenresRepository.findByGenresModel(genresExist);
@@ -59,7 +57,7 @@ public class StoryServiceImpl implements StoryService {
     public ResponseMsg createStory(ResourceStoryDto createStoryDto, Integer genresId) {
         Optional<GenresEntity> genresOptional = genresRepository.findById(genresId);
         if (genresOptional.isEmpty()) {
-            return ResponseMsg.error(404, "Khong tim thay the loai nay!");
+            return ResponseMsg.notFound("Khong tim thay the loai nay!");
         }
         GenresEntity existingGenres = genresOptional.get();
 
@@ -95,7 +93,7 @@ public class StoryServiceImpl implements StoryService {
         Optional<StoryEntity> storyOptional = storyRepository.findById(id);
 
         if (storyOptional.isEmpty()) {
-            return ResponseMsg.error(404, "Khong tim thay ma truyen " + id + "!");
+            return ResponseMsg.notFound("Khong tim thay ma truyen " + id + "!");
         }
 
         StoryEntity existingStory = storyOptional.get();
@@ -144,11 +142,11 @@ public class StoryServiceImpl implements StoryService {
     public ResponseMsg deleteStory(Integer id) {
         StoryGenresEntity storyGenresEntity = storyGenresRepository.findById(id).orElse(null);
         if (storyGenresEntity == null) {
-            return ResponseMsg.error(404, "Khong tim thay ma truyen");
+            return ResponseMsg.notFound("Khong tim thay ma truyen");
         }
         StoryEntity storyEntity = storyRepository.findById(id).orElse(null);
         if (storyEntity == null) {
-            return ResponseMsg.error(404, "Khong tim thay ma truyen");
+            return ResponseMsg.notFound("Khong tim thay ma truyen");
         }
         String storyName = storyEntity.getTitle();
 
@@ -161,7 +159,7 @@ public class StoryServiceImpl implements StoryService {
     @Transactional
     public ResponseMsg deleteStoriesByIds(List<Integer> storyIds) {
         if (storyIds == null || storyIds.isEmpty()) {
-            return ResponseMsg.error(400, "Danh sách ID truyện không được trống!");
+            return ResponseMsg.badRequest("Danh sách ID truyện không được trống!");
         }
 
         List<StoryEntity> stories = storyRepository.findAllById(storyIds);
@@ -170,7 +168,7 @@ public class StoryServiceImpl implements StoryService {
                 .filter(id -> !foundIds.contains(id))
                 .toList();
         if (stories.isEmpty()) {
-            return ResponseMsg.error(404, "Không tìm thấy truyện nào với danh sách ID đã nhập!");
+            return ResponseMsg.notFound("Không tìm thấy truyện nào với danh sách ID đã nhập!");
         }
         List<StoryGenresEntity> storyGenresList = storyGenresRepository.findByStoryEntityIn(stories);
         storyGenresRepository.deleteAll(storyGenresList);
@@ -188,12 +186,12 @@ public class StoryServiceImpl implements StoryService {
     @Transactional
     public ResponseMsg deleteStoriesByGenre(Integer genreId) {
         if (genreId == null) {
-            return ResponseMsg.error(400, "Không được trống id!");
+            return ResponseMsg.badRequest("Không được trống id!");
         }
         GenresEntity genresExist = genresRepository.findById(genreId).orElse(null);
         List<StoryGenresEntity> storyGenresList = storyGenresRepository.findByGenresModel(genresExist);
         if (storyGenresList.isEmpty()) {
-            return ResponseMsg.error(404, "Không có truyện nào thuộc thể loại này!");
+            return ResponseMsg.notFound("Không có truyện nào thuộc thể loại này!");
         }
         List<Integer> storyIds = storyGenresList.stream()
                 .map(storyGenres -> storyGenres.getStoryEntity().getId())

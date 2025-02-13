@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
         Optional<UserEntity> userOptional = userRepository.findById(id);
 
         if (userOptional.isEmpty()) {
-            return ResponseMsg.error(404, "User not found");
+            return ResponseMsg.notFound("User not found");
         }
 
         UserEntity existingUser = userOptional.get();
@@ -83,7 +83,7 @@ public class UserServiceImpl implements UserService {
     public ResponseMsg deleteUser(int id) {
         UserEntity existingUser = userRepository.findById(id).orElse(null);
         if (existingUser == null) {
-            return ResponseMsg.error(404, "User not found");
+            return ResponseMsg.notFound("User not found");
         }
         userRepository.deleteById(id);
         return ResponseMsg.success("Drop user " + id + " success");

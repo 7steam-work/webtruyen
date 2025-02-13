@@ -41,7 +41,7 @@ public class GenresServiceImpl implements GenresService {
         Optional<GenresEntity> genresOptional = genresRepository.findById(id);
 
         if (genresOptional.isEmpty()) {
-            return ResponseMsg.error(404, "Genres not found");
+            return ResponseMsg.notFound("Genres not found");
         }
 
         GenresEntity existingGenres = genresOptional.get();
@@ -61,7 +61,7 @@ public class GenresServiceImpl implements GenresService {
     public ResponseMsg deleteGenres(Integer id) {
         GenresEntity existingGenres = genresRepository.findById(id).orElse(null);
         if (existingGenres == null) {
-            return ResponseMsg.error(404, "Genres not found!");
+            return ResponseMsg.notFound("Genres not found!");
         }
         genresRepository.deleteById(id);
         return ResponseMsg.success("Drop genres " + id + " success!");

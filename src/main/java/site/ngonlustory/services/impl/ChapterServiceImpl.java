@@ -43,7 +43,7 @@ public class ChapterServiceImpl implements ChaptersService {
         }
         StoryEntity storyExist = storyRepository.findById(storyId).orElse(null);
         if (storyExist == null) {
-            return ResponseMsg.error(404, "Không tìm thấy thể loại truyện này!");
+            return ResponseMsg.notFound("Không tìm thấy thể loại truyện này!");
         }
 
         List<ChapterEntity> listChapter = chaptersRepository.findByStoryEntity(storyExist, pageable);
@@ -55,7 +55,7 @@ public class ChapterServiceImpl implements ChaptersService {
     public ResponseMsg createChapter(ResourceChapterDto resourceChapterDto, Integer id) {
         StoryEntity storyExist = storyRepository.findById(id).orElse(null);
         if (storyExist == null) {
-            return ResponseMsg.error(404, "Khong tim thay ma truyen");
+            return ResponseMsg.badRequest("Khong tim thay ma truyen");
         } else {
             return ResponseMsg.success(chaptersRepository.save(
                     ChapterEntity.builder()
@@ -71,11 +71,11 @@ public class ChapterServiceImpl implements ChaptersService {
     @Override
     public ResponseMsg updateChapter(Integer id, ResourceChapterDto input) {
         if (id == null) {
-            return ResponseMsg.error(400, "Id truyen bi rong");
+            return ResponseMsg.badRequest("Id truyen bi rong");
         }
         Optional<ChapterEntity> chapterExist = chaptersRepository.findById(id);
         if (chapterExist.isEmpty()) {
-            return ResponseMsg.error(404, "Khong tim thay ma truyen " + id);
+            return ResponseMsg.badRequest("Khong tim thay ma truyen " + id);
         }
 
         ChapterEntity newChapter = chapterExist.get();
@@ -105,7 +105,7 @@ public class ChapterServiceImpl implements ChaptersService {
     @Transactional
     public ResponseMsg deleteChapterByIds(List<Integer> chapterIds) {
         if (chapterIds == null || chapterIds.isEmpty()) {
-            return ResponseMsg.error(400, "Danh sách mã chapter không được trống!");
+            return ResponseMsg.badRequest("Danh sách mã chapter không được trống!");
         }
 
         List<ChapterEntity> chapter = chaptersRepository.findAllById(chapterIds);
@@ -114,7 +114,7 @@ public class ChapterServiceImpl implements ChaptersService {
                 .filter(id -> !foundIds.contains(id))
                 .toList();
         if (chapter.isEmpty()) {
-            return ResponseMsg.error(404, "Không tìm thấy truyện nào với danh sách ID đã nhập!");
+            return ResponseMsg.notFound("Không tìm thấy truyện nào với danh sách ID đã nhập!");
         }
         chaptersRepository.deleteAll(chapter);
         if (!notFoundIds.isEmpty()) {
@@ -129,17 +129,17 @@ public class ChapterServiceImpl implements ChaptersService {
     @Transactional
     public ResponseMsg deleteChapterByStory(Integer id) {
         if (id == null) {
-            return ResponseMsg.error(400, "Mã truyện không được để trống!");
+            return ResponseMsg.badRequest("Mã truyện không được để trống!");
         }
 
         StoryEntity story = storyRepository.findById(id).orElse(null);
         if (story == null) {
-            return ResponseMsg.error(404, "Không tìm thấy truyện với mã " + id);
+            return ResponseMsg.notFound("Không tìm thấy truyện với mã " + id);
         }
 
         List<ChapterEntity> chapters = chaptersRepository.findByStoryEntity(story);
         if (chapters.isEmpty()) {
-            return ResponseMsg.error(404, "Không tìm thấy chapter nào của truyện này!");
+            return ResponseMsg.notFound("Không tìm thấy chapter nào của truyện này!");
         }
 
         chaptersRepository.deleteAll(chapters);
